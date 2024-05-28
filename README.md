@@ -11,5 +11,5 @@ This starter comes with:
 ## Getting Started
 
 ```bash
-bunx nuxi@latest init -t gh:FelipeSanchezCalzada/nuxt-fsc-starter-template <project-name>
+bunx nuxi@latest init --package-manager	bun -t gh:FelipeSanchezCalzada/nuxt-fsc-starter-template <project-name>
 ```
