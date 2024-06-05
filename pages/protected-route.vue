@@ -2,7 +2,7 @@
 
 definePageMeta({
   middleware: [
-      'is-authenticated'
+    'is-authenticated'
   ]
 })
 

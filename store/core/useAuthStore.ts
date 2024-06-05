@@ -1,13 +1,10 @@
 import Keycloak from 'keycloak-js'
-import type {Ref} from 'vue'
-
+import type { Ref } from 'vue'
 
 export const useAuthStore = defineStore('useAuthStore', () => {
-
   const keycloakInstance: Ref<Keycloak | null> = ref(null)
 
   const initKeycloak = async (force = false) => {
-
     if (!force && isInitialized.value) {
       return
     }
@@ -15,35 +12,34 @@ export const useAuthStore = defineStore('useAuthStore', () => {
     const kc = new Keycloak({
       url: 'http://localhost:8080',
       realm: 'test_realm',
-      clientId: 'client_front',
+      clientId: 'client_front'
     })
 
     try {
       const authenticated = await kc.init({
         checkLoginIframe: true,
         onLoad: 'check-sso',
-        silentCheckSsoRedirectUri: `${location.origin}/silent-check-sso.html`,
-      });
-      console.log(`User is ${authenticated ? 'authenticated' : 'not authenticated'}`);
+        silentCheckSsoRedirectUri: `${location.origin}/silent-check-sso.html`
+      })
     } catch (error) {
-      console.error('Failed to initialize adapter:', error);
+      console.error('Failed to initialize adapter:', error)
     } finally {
       keycloakInstance.value = kc
     }
   }
 
-  const login = (redirectUri: string = null) => {
+  const login = (redirectUri: string | null = null) => {
     if (!keycloakInstance.value) {
       throw new Error('[useAuthStore] Call initKeycloak() before login()')
     }
 
-
-    const options = {}
     if (redirectUri) {
-      options.redirectUri = redirectUri
+      return keycloakInstance.value.login({
+        redirectUri
+      })
     }
 
-    return keycloakInstance.value.login(options)
+    return keycloakInstance.value.login()
   }
 
   const logout = () => {
@@ -74,8 +70,6 @@ export const useAuthStore = defineStore('useAuthStore', () => {
     return !keycloakInstance.value.isTokenExpired()
   }
 
-
-
   const accessToken = computed(() => {
     const token = keycloakInstance.value?.token
     if (!token) {
@@ -95,6 +89,6 @@ export const useAuthStore = defineStore('useAuthStore', () => {
     refreshTokenIfNeeded,
     isAuthenticated,
     isInitialized,
-    accessToken,
+    accessToken
   }
 })

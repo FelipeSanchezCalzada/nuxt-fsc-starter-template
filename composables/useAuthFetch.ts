@@ -1,23 +1,30 @@
-import {useAuthStore} from '~/store/core/useAuthStore'
+import { useAuthStore } from '~/store/core/useAuthStore'
 
 type NuxtFetchType = typeof $fetch
 
-export default function useAuthFetch() {
+export default function useAuthFetch () {
   const authStore = useAuthStore()
 
-  const authFetch: NuxtFetchType = (request, opts) => {
-    const token = authStore.accessToken
+  const $authFetch: NuxtFetchType = async (request, opts) => {
+    await authStore.refreshTokenIfNeeded()
+    if (!await authStore.isAuthenticated()) {
+      authStore.login(
+        document.location.href
+      )
+    }
 
-    opts = opts || {}
-    opts.headers = opts.headers || {}
-    opts.headers['Authorization'] = `Bearer ${token}`
+    const parsedOptions = {
+      ...opts,
+      headers: {
+        ...opts?.headers,
+        Authorization: `Bearer ${authStore.accessToken}`
+      }
+    }
 
-    return $fetch(request, opts)
-
+    return await $fetch(request, parsedOptions)
   }
 
   return {
-    authFetch
+    $authFetch
   }
-
 }
