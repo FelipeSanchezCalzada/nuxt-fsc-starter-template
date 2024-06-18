@@ -1,15 +1,14 @@
-import { useAuthStore } from '~/store/core/useAuthStore'
-
 type NuxtFetchType = typeof $fetch
 
 export default function useAuthFetch () {
-  const authStore = useAuthStore()
-
   const $authFetch: NuxtFetchType = async (request, opts) => {
-    await authStore.refreshTokenIfNeeded()
-    if (!await authStore.isAuthenticated()) {
-      authStore.login(
-        document.location.href,
+    const { $keycloak } = useNuxtApp()
+    await $keycloak.updateToken(10)
+    if (!await $keycloak.authenticated) {
+      $keycloak.login(
+        {
+          redirectUri: document.location.href,
+        },
       )
     }
 
@@ -17,7 +16,7 @@ export default function useAuthFetch () {
       ...opts,
       headers: {
         ...opts?.headers,
-        Authorization: `Bearer ${authStore.accessToken}`,
+        Authorization: `Bearer ${$keycloak.token}`,
       },
     }
 

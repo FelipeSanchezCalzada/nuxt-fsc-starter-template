@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import 'primevue/resources/themes/aura-dark-cyan/theme.css'
-import { useAuthStore } from '~/store/core/useAuthStore'
 import useAuthFetch from '~/composables/useAuthFetch'
 
-const authStore = useAuthStore()
+const { $keycloak } = useNuxtApp()
 const { $authFetch } = useAuthFetch()
 
 const login = () => {
-  authStore.login()
+  $keycloak.login()
 }
 
-const logout = async () => {
-  await authStore.logout()
+const logout = () => {
+  $keycloak.logout()
 }
 
 const doRequest = () => {
