@@ -8,8 +8,11 @@ This starter comes with:
 - [TailwindCSS](https://tailwindcss.com/) (Preflight reset are disabled [see this for more info](https://tailwindcss.com/docs/preflight))
 - [Pinia](https://pinia.vuejs.org/ssr/nuxt.html)
 
-Utilities
+## Utilities
 - Keycloak auth composable (useAuthStore)
+- login page to manage redirects
+- Initializations middleware
+- isAuthenticated middleware to protect only authenticated routes
 
 ## Getting Started
 
@@ -21,3 +24,4 @@ bunx nuxi@latest init --package-manager	bun -t gh:FelipeSanchezCalzada/nuxt-fsc-
 > ¿Why Tailwind Preflight are disabled?
 > 
 > PrimeVue already comes with base styles. If we enable Tailwind Preflight, then the base PrimeVue styles will be broken.
+

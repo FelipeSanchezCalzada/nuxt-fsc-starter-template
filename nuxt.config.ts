@@ -2,8 +2,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [
-    "@pinia/nuxt",
-    "nuxt-primevue",
-    "@nuxtjs/tailwindcss",
+    '@pinia/nuxt',
+    'nuxt-primevue',
+    '@nuxtjs/tailwindcss',
   ],
 })

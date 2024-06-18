@@ -12,14 +12,14 @@ export const useAuthStore = defineStore('useAuthStore', () => {
     const kc = new Keycloak({
       url: 'http://localhost:8080',
       realm: 'test_realm',
-      clientId: 'client_front'
+      clientId: 'client_front',
     })
 
     try {
       const authenticated = await kc.init({
         checkLoginIframe: true,
         onLoad: 'check-sso',
-        silentCheckSsoRedirectUri: `${location.origin}/silent-check-sso.html`
+        silentCheckSsoRedirectUri: `${location.origin}/silent-check-sso.html`,
       })
     } catch (error) {
       console.error('Failed to initialize adapter:', error)
@@ -35,7 +35,7 @@ export const useAuthStore = defineStore('useAuthStore', () => {
 
     if (redirectUri) {
       return keycloakInstance.value.login({
-        redirectUri
+        redirectUri,
       })
     }
 
@@ -83,12 +83,13 @@ export const useAuthStore = defineStore('useAuthStore', () => {
   })
 
   return {
+    keycloakInstance,
     initKeycloak,
     login,
     logout,
     refreshTokenIfNeeded,
     isAuthenticated,
     isInitialized,
-    accessToken
+    accessToken,
   }
 })

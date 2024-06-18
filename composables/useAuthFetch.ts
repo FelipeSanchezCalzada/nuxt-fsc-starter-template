@@ -9,7 +9,7 @@ export default function useAuthFetch () {
     await authStore.refreshTokenIfNeeded()
     if (!await authStore.isAuthenticated()) {
       authStore.login(
-        document.location.href
+        document.location.href,
       )
     }
 
@@ -17,14 +17,14 @@ export default function useAuthFetch () {
       ...opts,
       headers: {
         ...opts?.headers,
-        Authorization: `Bearer ${authStore.accessToken}`
-      }
+        Authorization: `Bearer ${authStore.accessToken}`,
+      },
     }
 
     return await $fetch(request, parsedOptions)
   }
 
   return {
-    $authFetch
+    $authFetch,
   }
 }
