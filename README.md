@@ -1,16 +1,17 @@
 # Nuxt FSC Starter
 
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Bun](https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white)
 ![Nuxtjs](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
 
 
 This starter comes with:
-- ![Bun Logo](https://api.iconify.design/logos:bun.svg) [Bun](https://bun.sh/)
-- ![Nuxt 3](https://api.iconify.design/logos:nuxt-icon.svg) [Nuxt 3](https://nuxt.com/)
-- ![TypeScript](https://api.iconify.design/logos:typescript-icon.svg) [TypeScript](https://www.typescriptlang.org/)
+- [Bun](https://bun.sh/)
+- [Nuext3](https://nuxt.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [PrimeVue](https://primevue.org/)
-- ![Tailwind](https://api.iconify.design/logos:tailwindcss-icon.svg) [TailwindCSS](https://tailwindcss.com/) (Preflight reset are disabled [see this for more info](https://tailwindcss.com/docs/preflight))
-- ![Pinia](https://api.iconify.design/logos:pinia.svg) [Pinia](https://pinia.vuejs.org/ssr/nuxt.html)
+- [TailwindCSS](https://tailwindcss.com/) (Preflight reset are disabled [see this for more info](https://tailwindcss.com/docs/preflight))
+- [Pinia](https://pinia.vuejs.org/ssr/nuxt.html)
 
 ## Utilities
 - Keycloak auth composable (useAuthStore)
