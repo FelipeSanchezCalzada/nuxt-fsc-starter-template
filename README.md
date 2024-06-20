@@ -5,7 +5,7 @@
 ![Nuxtjs](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
 
 
-This starter comes with:
+## Stack
 - [Bun](https://bun.sh/)
 - [Nuext3](https://nuxt.com/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -14,9 +14,7 @@ This starter comes with:
 - [Pinia](https://pinia.vuejs.org/ssr/nuxt.html)
 
 ## Utilities
-- Keycloak auth composable (useAuthStore)
-- login page to manage redirects
-- Initializations middleware
+- Keycloak plugin
 - isAuthenticated middleware to protect only authenticated routes
 
 ## Getting Started
@@ -24,6 +22,8 @@ This starter comes with:
 ```bash
 bunx nuxi@latest init --package-manager	bun -t gh:FelipeSanchezCalzada/nuxt-fsc-starter-template <project-name>
 ```
+
+---
 
 > [!NOTE]  
 > ¿Why Tailwind Preflight are disabled?
