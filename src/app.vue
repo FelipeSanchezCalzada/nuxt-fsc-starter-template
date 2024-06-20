@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import 'primevue/resources/themes/aura-dark-cyan/theme.css'
+import 'primevue/resources/themes/aura-dark-noir/theme.css'
 import useAuthFetch from '~/composables/useAuthFetch'
 
 const { $keycloak } = useNuxtApp()
@@ -24,10 +24,12 @@ const doRequest = () => {
 <template>
   <div>
     <!--    <NuxtWelcome />-->
-    <Button label="Login" @click="login" />
-    <Button label="Logout" @click="logout" />
 
-    <Button label="Request" @click="doRequest" />
+    <div class="my-5">
+      <Button class="mx-2" label="Login" @click="login" />
+      <Button class="mx-2" label="Logout" @click="logout" />
+      <Button class="mx-2" label="Request" @click="doRequest" />
+    </div>
 
     <NuxtPage />
   </div>
