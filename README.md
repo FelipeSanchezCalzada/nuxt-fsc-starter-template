@@ -1,7 +1,11 @@
 # Nuxt FSC Starter
 
+![Bun](https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white)
+![Nuxtjs](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
+
+
 This starter comes with:
-- [Bun](https://bun.sh/)
+- ![Bun Logo](https://api.iconify.design/logos:bun.svg) [Bun](https://bun.sh/)
 - [Nuext3](https://nuxt.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [PrimeVue](https://primevue.org/)
