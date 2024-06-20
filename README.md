@@ -18,7 +18,7 @@ web applications. This project is designed to provide a robust and scalable init
 
 ## Stack
 - [Bun](https://bun.sh/)
-- [Nuext3](https://nuxt.com/)
+- [Nuxt 3](https://nuxt.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [PrimeVue](https://primevue.org/)
 - [TailwindCSS](https://tailwindcss.com/) (Preflight reset are disabled [see this for more info](https://tailwindcss.com/docs/preflight))
