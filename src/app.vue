@@ -23,13 +23,14 @@ const doRequest = () => {
 
 <template>
   <div>
-    <!--    <NuxtWelcome />-->
+    <!--    Uncomment this to see login, logout, and request examples-->
+    <!--    <div class="my-5">-->
+    <!--      <Button class="mx-2" label="Login" @click="login" />-->
+    <!--      <Button class="mx-2" label="Logout" @click="logout" />-->
+    <!--      <Button class="mx-2" label="Request" @click="doRequest" />-->
+    <!--    </div>-->
 
-    <div class="my-5">
-      <Button class="mx-2" label="Login" @click="login" />
-      <Button class="mx-2" label="Logout" @click="logout" />
-      <Button class="mx-2" label="Request" @click="doRequest" />
-    </div>
+    <NuxtWelcome />
 
     <NuxtPage />
   </div>
